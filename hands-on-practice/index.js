@@ -25,6 +25,14 @@ app.post("/create",(req,res)=>{
   })
 });
 
+app.get("/files/:filename",(req,res)=>{
+  // const file = req.params.filename;
+  fs.readFile(`./files/${req.params.filename}`, "utf-8",(err,data)=>{
+    res.render('show',{title: req.params.filename, details: data})
+  })
+
+});
+
 app.listen(PORT,()=>{
     console.log(`Server is running on port ${PORT}`);
 });

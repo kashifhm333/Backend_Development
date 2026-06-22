@@ -19,15 +19,15 @@
 
         <!-- Tasks Section -->
         <div class="tasks flex p-10 gap-5 flex-wrap">
-            <% files.forEach(file => { %>
+            <% files.forEach(val => { %>
                 <div class="task w-72 px-3 py-4 bg-zinc-800 text-white rounded-lg">
-                    <h1 class="text-white text-3xl tracking-tighter"><%= file %></h1>
-                    <a href="#" class="text-blue-500 hover:underline">Read More</a>
+                    <h1 class="text-white text-3xl tracking-tighter"><%= val %></h1>
+                    <a href="/files/<%= val %>"  class="text-blue-500 hover:underline">Read More</a>
                 </div>
             <% }) %>
             <div class="task hidden w-72 px-3 py-4 bg-zinc-800 text-white rounded-lg">
                 <h1 class="text-white text-3xl tracking-tighter">Task One</h1>
-                <a href="#" class="text-blue-500 hover:underline">Read More</a>
+                <a href="/files/<%=  %>" class="text-blue-500 hover:underline">Read More</a>
             </div>
 
             <div class="task hidden w-72 px-3 py-4 bg-zinc-800 text-white rounded-lg">

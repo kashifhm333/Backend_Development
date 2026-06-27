@@ -30,7 +30,17 @@ app.get("/files/:filename",(req,res)=>{
   fs.readFile(`./files/${req.params.filename}`, "utf-8",(err,data)=>{
     res.render('show',{title: req.params.filename, details: data})
   })
+});
 
+app.post("/edit",(req,res)=>{
+  fs.rename(`./files/${req.body.Previous}`, `./files/${req.body.New}`, (err) => {
+    res.redirect("/");
+  })
+
+ }); 
+
+app.get("/edit/:filename",(req,res)=>{
+  res.render("edit", { filename: req.params.filename });
 });
 
 app.listen(PORT,()=>{

@@ -18,11 +18,15 @@
         </div>
 
         <!-- Tasks Section -->
+         
         <div class="tasks flex p-10 gap-5 flex-wrap">
             <% files.forEach(val => { %>
                 <div class="task w-72 px-3 py-4 bg-zinc-800 text-white rounded-lg">
                     <h1 class="text-white text-3xl tracking-tighter"><%= val %></h1>
+                    <div class="flex justify-between">
                     <a href="/files/<%= val %>"  class="text-blue-500 hover:underline">Read More</a>
+                    <a href="/edit/<%= val %>" class="text-green-500 hover:underline">Edit</a>
+                    </div>
                 </div>
             <% }) %>
             <div class="task hidden w-72 px-3 py-4 bg-zinc-800 text-white rounded-lg">
